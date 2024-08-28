@@ -56,7 +56,7 @@ begin
 	Linha_Robo = Linha_Mapa[0:14];
 	Coluna_Robo = Linha_Mapa[15:29];
 	Orientacao_Robo = Linha_Mapa[30:35];
-	Qtd_Movimentos = 8'b11001000;
+	Qtd_Movimentos = Linha_Mapa[36:59];
 	$display ("Linha = %d Coluna = %d Orientacao = %s Movimentos = %d", Linha_Robo, Coluna_Robo, String_Orientacao_Robo, Qtd_Movimentos);
 
     // Mapa fica salvo no reg mapa, depois que remover alterar valor dele pode fazer uma funcao
@@ -85,7 +85,7 @@ begin
 		if (Situacoes_Anomalas(1)) $stop;
 	end
 
-	//#50 $stop;
+	#50 $stop;
 end
 
 /*
@@ -529,29 +529,17 @@ begin
 					Linha_Mapa[Coluna_Robo] = 1;
 					//terceiro_bit
 					Linha_Mapa[Coluna_Robo + 1] = 0;
-			Mapa[Linha_Robo - 1] = Linha_Mapa;
 
         
       contador_remocao = 2'b01;
-	  barrier = 0;
     end
 
     2'b01: begin
       // Segundo ciclo de remoção
      	if (tamanho_lixo == 3'b010)
-      		//Mapa[Linha_Robo] = (primeiro_bit == 0) && ( segundo_bit == 0) && (terceiro_bit == 0); // Celula livre
-			Linha_Mapa = Mapa[Linha_Robo - 1]; // Pega a linha que t� acima da cabe�a do robo					
-					
-					//primeiro_bit
-					Linha_Mapa[Coluna_Robo - 1] = 0;
-					//segundo_bit
-					Linha_Mapa[Coluna_Robo] = 0;
-					//terceiro_bit
-					Linha_Mapa[Coluna_Robo + 1] = 0;
-			Mapa[Linha_Robo - 1] = Linha_Mapa;
+      		Mapa[Linha_Robo] = (primeiro_bit == 0) && ( segundo_bit == 0) && (terceiro_bit == 0); // Celula livre
         
       contador_remocao = 2'b10;
-	  barrier = 0;
     end
   endcase
 end

@@ -1,0 +1,8 @@
+/home/palomasilvaarizesantos/Documentos/ufba/lab-i/RoboColetor/Robo.v {1 {vlog -work work -stats=none /home/palomasilvaarizesantos/Documentos/ufba/lab-i/RoboColetor/Robo.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Robo
+
+Top level modules:
+	Robo
+
+} {} {}}

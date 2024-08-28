@@ -257,6 +257,11 @@ module Robo(input clock, input reset, input head, input left, input under, input
 
             rotacionando_dois: begin
                 case ({head, left, under, barrier})
+                //HOLD
+                    4'b1000: begin
+                        estado_futuro = rotacionando_dois;
+                    end
+                
                     4'b0000: begin
                         forward = 1'b0;
                         turn = 1'b1;

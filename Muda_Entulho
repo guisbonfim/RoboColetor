@@ -2,6 +2,7 @@ entulho 1: 010
 entulho 2: 011
 entulho 3: 100
 
+
 reg [1:0] contador_remocao;
 
 task Muda_Codigo_Entulho (input [7:0] linha,input [0:0] bit_um, input [0:0] bit_dois, input [0:0] bit_tres);
