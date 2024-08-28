@@ -1,0 +1,49 @@
+entulho 1: 010
+entulho 2: 011
+entulho 3: 100
+
+reg [1:0] contador_remocao;
+
+task Muda_Codigo_Entulho (input [7:0] linha,input [0:0] bit_um, input [0:0] bit_dois, input [0:0] bit_tres);
+begin
+  case (contador_remocao)
+    2'b00: begin
+      // Primeiro ciclo de remoção
+      if ((primeiro_bit == 1) && ( segundo_bit == 0) && (terceiro_bit == 0))
+      
+        Mapa[linha] = (primeiro_bit == 0) && ( segundo_bit == 1) && (terceiro_bit == 1); // Entulho 2
+        
+      else if ((primeiro_bit == 0) && ( segundo_bit == 1) && (terceiro_bit == 1))
+      
+        Mapa[linha] = (primeiro_bit == 0) && ( segundo_bit == 1) && (terceiro_bit == 0); //Entulho 1
+        
+      else if ((primeiro_bit == 0) && ( segundo_bit == 1) && (terceiro_bit == 0))
+      
+        Mapa[linha] = (primeiro_bit == 0) && ( segundo_bit == 0) && (terceiro_bit == 0); //Celula livre
+        
+      contador_remocao = 2'b01;
+    end
+
+    2'b01: begin
+      // Segundo ciclo de remoção
+      if ((primeiro_bit == 0) && ( segundo_bit == 1) && (terceiro_bit == 1))
+      
+        Mapa[linha] = (primeiro_bit == 0) && ( segundo_bit == 1) && (terceiro_bit == 0); // Entulho 1
+        
+      else if ((primeiro_bit == 0) && ( segundo_bit == 1) && (terceiro_bit == 0))
+      
+        Mapa[linha] = (primeiro_bit == 0) && ( segundo_bit == 0) && (terceiro_bit == 0); // Celula livre
+        
+      contador_remocao = 2'b10;
+    end
+
+    2'b10: begin
+      // Terceiro ciclo de remoção
+      if ((primeiro_bit == 0) && ( segundo_bit == 1) && (terceiro_bit == 0)) // Entulho 1
+        Mapa[linha] = (primeiro_bit == 0) && ( segundo_bit == 0) && (terceiro_bit == 0); //Celula livre
+        
+      contador_remocao = 2'b00; // Reseta o contador para a proxima remocao
+    end
+  endcase
+end
+endtask
