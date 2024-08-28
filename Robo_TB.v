@@ -25,14 +25,14 @@ Robo DUV (.clock(clock), .reset(reset), .head(head), .left(left), .under(under),
 
 always
 	#50 clock = !clock;
-	
+
 
 initial
 begin
 	clock = 0;
 	reset = 1;
 	head = 0;
-	left = 1;
+	left = 0;
 	under = 1;
 	barrier = 0;
 
