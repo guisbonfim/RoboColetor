@@ -25,6 +25,7 @@ Robo DUV (.clock(clock), .reset(reset), .head(head), .left(left), .under(under),
 
 always
 	#50 clock = !clock;
+	
 
 initial
 begin
