@@ -10,23 +10,23 @@ z2
 cModel Technology
 d/home/palomasilvaarizesantos/Documentos/ufba/lab-i/robo-coletor
 vRobo
-Z0 !s110 1724849739
+Z0 !s110 1724923143
 !i10b 1
-!s100 oK^`_m[LM4IIVFOS?C4P02
+!s100 ISOX^TaJ8J9BHRaH@<DZ00
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-ITi_kob>keCYmfYf1KVe1z2
+IM7@e83>o?URJ@ZR3mBI7;1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 d/home/palomasilvaarizesantos/Documentos/ufba/lab-i/RoboColetor
-w1724844768
+w1724919207
 8/home/palomasilvaarizesantos/Documentos/ufba/lab-i/RoboColetor/Robo.v
 F/home/palomasilvaarizesantos/Documentos/ufba/lab-i/RoboColetor/Robo.v
-!i122 31
-L0 1 302
+!i122 85
+L0 1 297
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1724849739.000000
+Z5 !s108 1724923143.000000
 !s107 /home/palomasilvaarizesantos/Documentos/ufba/lab-i/RoboColetor/Robo.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/palomasilvaarizesantos/Documentos/ufba/lab-i/RoboColetor/Robo.v|
 !i113 1
@@ -36,16 +36,16 @@ n@robo
 vRobo_TB
 R0
 !i10b 1
-!s100 H^NBh@^ZjkkJ<GD8LM=8i1
+!s100 YgZWUF7Khz:Y37mVdzYcB2
 R1
-I6@zK=XeSo]JaiANQ66?Af3
+ITZBzAgo<K]MYblIm?m1le2
 R2
 R3
-w1724849733
+w1724923138
 8/home/palomasilvaarizesantos/Documentos/ufba/lab-i/RoboColetor/Robo_TB.v
 F/home/palomasilvaarizesantos/Documentos/ufba/lab-i/RoboColetor/Robo_TB.v
-!i122 32
-L0 3 559
+!i122 86
+L0 3 570
 R4
 r1
 !s85 0
