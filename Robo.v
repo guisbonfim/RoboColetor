@@ -221,18 +221,7 @@ module Robo(input clock, input reset, input head, input left, input under, input
                         remove = 1'b0;
                         estado_futuro = rotacionando_um;
                     end
-                    4'b1100: begin
-                        forward = 1'b0;
-                        turn = 1'b1;
-                        remove = 1'b0;
-                        estado_futuro = rotacionando_um;
-                    end
-                    4'b1110: begin
-                        forward = 1'b0;
-                        turn = 1'b1;
-                        remove = 1'b0;
-                        estado_futuro = rotacionando_um;
-                    end
+                    
                     4'b1010: begin
                         forward = 1'b0;
                         turn = 1'b1;
