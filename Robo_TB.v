@@ -30,7 +30,7 @@ always
 initial
 begin
 	clock = 0;
-	reset = 1;
+	reset = 0; //alterou
 	head = 0;
 	left = 0;
 	under = 1;
@@ -61,7 +61,6 @@ begin
 	if (Situacoes_Anomalas(1)) $stop;
 	
 	
-	#100 @ (negedge clock) reset = 0; //sincroniza com borda de descida
 	#25 @ (posedge clock) under = 0; 
 	
 
@@ -70,6 +69,7 @@ begin
 		@ (negedge clock);
 		Define_Sensores;
 		$display ("H = %b L = %b U = %b B = %b", head, left, under, barrier);
+		#1; //delay para atualizar a posicao no tempo certo
 		@ (negedge clock);
 		Atualiza_Posicao_Robo;
 		case (Orientacao_Robo)
@@ -85,24 +85,6 @@ begin
 	#50 $stop;
 end
 
-/*
-function Muda_Codigo_Entulho (input linha, input bit_um, input bit_dois, input bit_tres);
-begin
-	if ((bit_um == 1) && ( bit_dois == 0) && (bit_tres == 0))
-	begin
-		// Mudar mapa Mapa[x][y] para prox codigo -> 011
-	end
-	else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 1))
-	begin
-		// Mudar mapa Mapa[x][y] para prox codigo -> 010
-	end
-	else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 0))
-	begin
-		// Mudar mapa Mapa[x][y] para prox codigo -> 000
-	end
-end
-endfunction
-*/
 
 function Situacoes_Anomalas (input X);
 begin
