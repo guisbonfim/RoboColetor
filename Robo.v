@@ -284,4 +284,3 @@ module Robo(input clock, input reset, input head, input left, input under, input
     end
     
 endmodule
-
