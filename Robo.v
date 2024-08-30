@@ -13,7 +13,7 @@ module Robo(input clock, input reset, input head, input left, input under, input
               standby = 7'b0100000,
               state_fetch = 7'b1000000;
     
-    // Primeiro procedimento - Decodificador de proximo estado
+    // Primeiro procedimento - Decodificador de próximo estado
     always @(negedge clock, negedge reset) begin
         if (reset) begin
             estado_atual = inicial; // Se o reset for igual a zero volta para o estado inicial
@@ -23,7 +23,7 @@ module Robo(input clock, input reset, input head, input left, input under, input
         end
     end
     
-    // Segundo Procedimento - Atualizacao das saidas
+    // Segundo Procedimento - Atualização das saídas
     always @(estado_atual, head, left, under, barrier) begin
         case (estado_atual)
             inicial: begin
@@ -221,7 +221,18 @@ module Robo(input clock, input reset, input head, input left, input under, input
                         remove = 1'b0;
                         estado_futuro = rotacionando_um;
                     end
-                    
+                    4'b1100: begin
+                        forward = 1'b0;
+                        turn = 1'b1;
+                        remove = 1'b0;
+                        estado_futuro = rotacionando_um;
+                    end
+                    4'b1110: begin
+                        forward = 1'b0;
+                        turn = 1'b1;
+                        remove = 1'b0;
+                        estado_futuro = rotacionando_um;
+                    end
                     4'b1010: begin
                         forward = 1'b0;
                         turn = 1'b1;

@@ -18,6 +18,7 @@ reg [0:47] String_Orientacao_Robo;
 reg [0:0] primeiro_bit;
 reg [0:0] segundo_bit;
 reg [0:0] terceiro_bit;
+reg [0:1] removendo_entulho;
 
 integer i;
 
@@ -57,6 +58,8 @@ begin
     // Mapa fica salvo no reg mapa, depois que remover alterar valor dele pode fazer uma funcao
 
 	if (Situacoes_Anomalas(1)) $stop;
+
+	removendo_entulho = 0;
 	
 	for (i = 0; i < Qtd_Movimentos; i = i + 1)
 	begin
@@ -120,109 +123,117 @@ end
 
 task Muda_Codigo_Entulho (input bit_um, input bit_dois, input bit_tres);
 begin
-	if (Orientacao_Robo == N)
-	begin
-		if ((bit_um == 1) && ( bit_dois == 0) && (bit_tres == 0))
-		begin
-			// Mudar mapa Mapa[x][y] para prox codigo -> 011
-			Mapa[Linha_Robo - 1][Coluna_Robo - 1] = 0;
-			Mapa[Linha_Robo - 1][Coluna_Robo] = 1;
-			Mapa[Linha_Robo - 1][Coluna_Robo + 1] = 1;
+	if (remove == 1) begin
+		if(removendo_entulho < 3)
+			removendo_entulho = removendo_entulho + 1;
+		else
+			begin
+				removendo_entulho = 0;
+				if (Orientacao_Robo == N)
+				begin
+					if ((bit_um == 1) && ( bit_dois == 0) && (bit_tres == 0))
+					begin
+						// Mudar mapa Mapa[x][y] para prox codigo -> 011
+						Mapa[Linha_Robo - 1][Coluna_Robo - 1] = 0;
+						Mapa[Linha_Robo - 1][Coluna_Robo] = 1;
+						Mapa[Linha_Robo - 1][Coluna_Robo + 1] = 1;
 
-		end
-		else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 1))
-		begin
-			// Mudar mapa Mapa[x][y] para prox codigo -> 010
-			Mapa[Linha_Robo - 1][Coluna_Robo - 1] = 0;
-			Mapa[Linha_Robo - 1][Coluna_Robo] = 1;
-			Mapa[Linha_Robo - 1][Coluna_Robo + 1] = 0;
-		end
-		else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 0))
-		begin
-			// Mudar mapa Mapa[x][y] para prox codigo -> 000
-			Mapa[Linha_Robo - 1][Coluna_Robo - 1] = 0;
-			Mapa[Linha_Robo - 1][Coluna_Robo] = 0;
-			Mapa[Linha_Robo - 1][Coluna_Robo + 1] = 0;
+					end
+					else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 1))
+					begin
+						// Mudar mapa Mapa[x][y] para prox codigo -> 010
+						Mapa[Linha_Robo - 1][Coluna_Robo - 1] = 0;
+						Mapa[Linha_Robo - 1][Coluna_Robo] = 1;
+						Mapa[Linha_Robo - 1][Coluna_Robo + 1] = 0;
+					end
+					else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 0))
+					begin
+						// Mudar mapa Mapa[x][y] para prox codigo -> 000
+						Mapa[Linha_Robo - 1][Coluna_Robo - 1] = 0;
+						Mapa[Linha_Robo - 1][Coluna_Robo] = 0;
+						Mapa[Linha_Robo - 1][Coluna_Robo + 1] = 0;
+					end
+				end
+				
+				else if (Orientacao_Robo == S)
+				begin
+					if ((bit_um == 1) && ( bit_dois == 0) && (bit_tres == 0))
+					begin
+						// Mudar mapa Mapa[x][y] para prox codigo -> 011
+						Mapa[Linha_Robo + 1][Coluna_Robo - 1] = 0;
+						Mapa[Linha_Robo + 1][Coluna_Robo] = 1;
+						Mapa[Linha_Robo + 1][Coluna_Robo + 1] = 1;
+
+					end
+					else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 1))
+					begin
+						// Mudar mapa Mapa[x][y] para prox codigo -> 010
+						Mapa[Linha_Robo + 1][Coluna_Robo - 1] = 0;
+						Mapa[Linha_Robo + 1][Coluna_Robo] = 1;
+						Mapa[Linha_Robo + 1][Coluna_Robo + 1] = 0;
+					end
+					else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 0))
+					begin
+						// Mudar mapa Mapa[x][y] para prox codigo -> 000
+						Mapa[Linha_Robo + 1][Coluna_Robo - 1] = 0;
+						Mapa[Linha_Robo + 1][Coluna_Robo] = 0;
+						Mapa[Linha_Robo + 1][Coluna_Robo + 1] = 0;
+					end
+				end
+
+				else if (Orientacao_Robo == L)
+				begin
+					if ((bit_um == 1) && ( bit_dois == 0) && (bit_tres == 0))
+					begin
+						// Mudar mapa Mapa[x][y] para prox codigo -> 011
+						Mapa[Linha_Robo][Coluna_Robo + 2] = 0;
+						Mapa[Linha_Robo][Coluna_Robo + 3] = 1;
+						Mapa[Linha_Robo][Coluna_Robo + 4] = 1;
+
+					end
+					else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 1))
+					begin
+						// Mudar mapa Mapa[x][y] para prox codigo -> 010
+						Mapa[Linha_Robo][Coluna_Robo + 2] = 0;
+						Mapa[Linha_Robo][Coluna_Robo + 3] = 1;
+						Mapa[Linha_Robo][Coluna_Robo + 4] = 0;
+					end
+					else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 0))
+					begin
+						// Mudar mapa Mapa[x][y] para prox codigo -> 000
+						Mapa[Linha_Robo][Coluna_Robo + 2] = 0;
+						Mapa[Linha_Robo][Coluna_Robo + 3] = 0;
+						Mapa[Linha_Robo][Coluna_Robo + 4] = 0;
+					end
+				end
+
+			else
+			begin
+				if ((bit_um == 1) && ( bit_dois == 0) && (bit_tres == 0))
+				begin
+					// Mudar mapa Mapa[x][y] para prox codigo -> 011
+					Mapa[Linha_Robo][Coluna_Robo - 2] = 0;
+					Mapa[Linha_Robo][Coluna_Robo - 3] = 1;
+					Mapa[Linha_Robo][Coluna_Robo - 4] = 1;
+
+				end
+				else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 1))
+				begin
+					// Mudar mapa Mapa[x][y] para prox codigo -> 010
+					Mapa[Linha_Robo][Coluna_Robo - 2] = 0;
+					Mapa[Linha_Robo][Coluna_Robo - 3] = 1;
+					Mapa[Linha_Robo][Coluna_Robo - 4] = 0;
+				end
+				else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 0))
+				begin
+					// Mudar mapa Mapa[x][y] para prox codigo -> 000
+					Mapa[Linha_Robo][Coluna_Robo - 2] = 0;
+					Mapa[Linha_Robo][Coluna_Robo - 3] = 0;
+					Mapa[Linha_Robo][Coluna_Robo - 4] = 0;
+				end
+			end	
 		end
 	end
-	
-	else if (Orientacao_Robo == S)
-	begin
-		if ((bit_um == 1) && ( bit_dois == 0) && (bit_tres == 0))
-		begin
-			// Mudar mapa Mapa[x][y] para prox codigo -> 011
-			Mapa[Linha_Robo + 1][Coluna_Robo - 1] = 0;
-			Mapa[Linha_Robo + 1][Coluna_Robo] = 1;
-			Mapa[Linha_Robo + 1][Coluna_Robo + 1] = 1;
-
-		end
-		else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 1))
-		begin
-			// Mudar mapa Mapa[x][y] para prox codigo -> 010
-			Mapa[Linha_Robo + 1][Coluna_Robo - 1] = 0;
-			Mapa[Linha_Robo + 1][Coluna_Robo] = 1;
-			Mapa[Linha_Robo + 1][Coluna_Robo + 1] = 0;
-		end
-		else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 0))
-		begin
-			// Mudar mapa Mapa[x][y] para prox codigo -> 000
-			Mapa[Linha_Robo + 1][Coluna_Robo - 1] = 0;
-			Mapa[Linha_Robo + 1][Coluna_Robo] = 0;
-			Mapa[Linha_Robo + 1][Coluna_Robo + 1] = 0;
-		end
-	end
-
-	else if (Orientacao_Robo == L)
-	begin
-		if ((bit_um == 1) && ( bit_dois == 0) && (bit_tres == 0))
-		begin
-			// Mudar mapa Mapa[x][y] para prox codigo -> 011
-			Mapa[Linha_Robo][Coluna_Robo + 2] = 0;
-			Mapa[Linha_Robo][Coluna_Robo + 3] = 1;
-			Mapa[Linha_Robo][Coluna_Robo + 4] = 1;
-
-		end
-		else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 1))
-		begin
-			// Mudar mapa Mapa[x][y] para prox codigo -> 010
-			Mapa[Linha_Robo][Coluna_Robo + 2] = 0;
-			Mapa[Linha_Robo][Coluna_Robo + 3] = 1;
-			Mapa[Linha_Robo][Coluna_Robo + 4] = 0;
-		end
-		else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 0))
-		begin
-			// Mudar mapa Mapa[x][y] para prox codigo -> 000
-			Mapa[Linha_Robo][Coluna_Robo + 2] = 0;
-			Mapa[Linha_Robo][Coluna_Robo + 3] = 0;
-			Mapa[Linha_Robo][Coluna_Robo + 4] = 0;
-		end
-	end
-
-	else
-	begin
-		if ((bit_um == 1) && ( bit_dois == 0) && (bit_tres == 0))
-		begin
-			// Mudar mapa Mapa[x][y] para prox codigo -> 011
-			Mapa[Linha_Robo][Coluna_Robo - 2] = 0;
-			Mapa[Linha_Robo][Coluna_Robo - 3] = 1;
-			Mapa[Linha_Robo][Coluna_Robo - 4] = 1;
-
-		end
-		else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 1))
-		begin
-			// Mudar mapa Mapa[x][y] para prox codigo -> 010
-			Mapa[Linha_Robo][Coluna_Robo - 2] = 0;
-			Mapa[Linha_Robo][Coluna_Robo - 3] = 1;
-			Mapa[Linha_Robo][Coluna_Robo - 4] = 0;
-		end
-		else if ((bit_um == 0) && ( bit_dois == 1) && (bit_tres == 0))
-		begin
-			// Mudar mapa Mapa[x][y] para prox codigo -> 000
-			Mapa[Linha_Robo][Coluna_Robo - 2] = 0;
-			Mapa[Linha_Robo][Coluna_Robo - 3] = 0;
-			Mapa[Linha_Robo][Coluna_Robo - 4] = 0;
-		end
-	end	
 end
 endtask
 
