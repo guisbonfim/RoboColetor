@@ -1,0 +1,142 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Projetos ModelSim/Interfaces VGA Memoria Gamepad - Completo Vetores
+vGamepad
+Z0 !s110 1724180999
+!i10b 1
+!s100 ]]hf9k[lWR8BMGc1XeMYT2
+I0V>lH[Fn7^Sio32=Vne9c3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores
+w1724095229
+8D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/Gamepad.v
+FD:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/Gamepad.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1724180999.000000
+!s107 D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/Gamepad.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/Gamepad.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+n@gamepad
+vGrafico
+R0
+!i10b 1
+!s100 O8OGVWUE4L`<inCNdUEH63
+InFC:K9d`noSH^jhC:Fz@Z2
+R1
+R2
+w1724111389
+8D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/Grafico.v
+FD:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/Grafico.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/Grafico.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/Grafico.v|
+!i113 1
+R5
+R6
+n@grafico
+vInterface
+R0
+!i10b 1
+!s100 mXkazGI0kXZb14Mg;^g7R3
+I4ckLOPz1UWcWFZDdUhjKO3
+R1
+R2
+w1723830710
+8D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/Interface.v
+FD:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/Interface.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/Interface.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/Interface.v|
+!i113 1
+R5
+R6
+n@interface
+vTemporizadorEntradas
+R0
+!i10b 1
+!s100 DLf1aSXbZA>R?K5]B@XeY2
+IZaLCPMJR=E?hd;M>P8GHJ0
+R1
+R2
+w1724095561
+8D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/TemporizadorEntradas.v
+FD:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/TemporizadorEntradas.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/TemporizadorEntradas.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/TemporizadorEntradas.v|
+!i113 1
+R5
+R6
+n@temporizador@entradas
+vTestBench
+R0
+!i10b 1
+!s100 O2BE]6?@b_eICbJH4EO7o0
+Il?I_2]maJoBzR_`ePN=TY2
+R1
+R2
+w1724095445
+8D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/TestBench.v
+FD:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/TestBench.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/TestBench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/TestBench.v|
+!i113 1
+R5
+R6
+n@test@bench
+vTOP
+R0
+!i10b 1
+!s100 ]T7aW8eeQ;UQZJ_8?>Z6[0
+InL;4EAjDmm5n;EgWaB<nW1
+R1
+R2
+w1724046229
+8D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/TOP.v
+FD:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/TOP.v
+L0 19
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/TOP.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Interfaces VGA Memoria Gamepad - Vetores/ModelSim/Interfaces VGA Memoria Gamepad - Vetores/TOP.v|
+!i113 1
+R5
+R6
+n@t@o@p

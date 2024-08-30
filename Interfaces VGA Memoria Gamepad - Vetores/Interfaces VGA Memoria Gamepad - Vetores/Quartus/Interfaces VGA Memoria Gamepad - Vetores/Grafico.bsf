@@ -1,0 +1,341 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 248 192)
+	(text "Grafico" (rect 5 0 34 12)(font "Arial" ))
+	(text "inst" (rect 8 160 20 172)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Clock50" (rect 0 0 31 12)(font "Arial" ))
+		(text "Clock50" (rect 21 27 52 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "Clock25" (rect 0 0 31 12)(font "Arial" ))
+		(text "Clock25" (rect 21 43 52 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "Reset" (rect 0 0 24 12)(font "Arial" ))
+		(text "Reset" (rect 21 59 45 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "ColunasSprites[23..0]" (rect 0 0 83 12)(font "Arial" ))
+		(text "ColunasSprites[23..0]" (rect 21 75 104 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "LinhasSprites[17..0]" (rect 0 0 76 12)(font "Arial" ))
+		(text "LinhasSprites[17..0]" (rect 21 91 97 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "Coluna[9..0]" (rect 0 0 47 12)(font "Arial" ))
+		(text "Coluna[9..0]" (rect 21 107 68 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "Linha[9..0]" (rect 0 0 41 12)(font "Arial" ))
+		(text "Linha[9..0]" (rect 21 123 62 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 232 32)
+		(output)
+		(text "RGB[23..0]" (rect 0 0 46 12)(font "Arial" ))
+		(text "RGB[23..0]" (rect 165 27 211 39)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32)(line_width 3))
+	)
+	(parameter
+		"IDLE"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LER_FILEIRA_MAPA"
+		"1"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"AGUARDAR_COLUNA"
+		"2"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LER_FUNDO"
+		"3"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LER_CELULA_PRETA"
+		"4"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"MERGE_CELULA_PRETA"
+		"5"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LER_LIXO_1"
+		"6"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"MERGE_LIXO_1"
+		"7"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LER_LIXO_2"
+		"8"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"MERGE_LIXO_2"
+		"9"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LER_LIXO_3"
+		"10"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"MERGE_LIXO_3"
+		"11"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LER_ROBO"
+		"12"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"MERGE_ROBO"
+		"13"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LER_CURSOR"
+		"14"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"MERGE_CURSOR"
+		"15"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"FILEIRA_FINAL_LADO_ESQUERDO"
+		"16"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"FILEIRA_FINAL_LADO_DIREITO"
+		"17"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LINHA_MAPA_1"
+		"235"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LINHA_MAPA_2"
+		"251"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LINHA_MAPA_3"
+		"267"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LINHA_MAPA_4"
+		"283"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LINHA_MAPA_5"
+		"299"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LINHA_INFERIOR"
+		"314"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"COLUNA_MAPA_1"
+		"364"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"COLUNA_MAPA_2"
+		"380"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"COLUNA_MAPA_3"
+		"396"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"COLUNA_MAPA_4"
+		"412"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"COLUNA_MAPA_5"
+		"428"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"COLUNA_MAPA_6"
+		"444"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"COLUNA_MAPA_7"
+		"460"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"COLUNA_MAPA_8"
+		"476"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"COLUNA_MAPA_9"
+		"492"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"COLUNA_MAPA_10"
+		"508"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"COLUNA_DIREITA"
+		"539"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"CODIGO_TRANSPARENTE"
+		"000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"CODIGO_AZUL"
+		"001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"CODIGO_BRANCO"
+		"010"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"CODIGO_CIANO"
+		"011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"CODIGO_LARANJA"
+		"100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"CODIGO_PRETO"
+		"101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"CODIGO_VERDE"
+		"110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"CODIGO_VERMELHO"
+		"111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"COR_TRANSPARENTE"
+		"000000000000000000000000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"COR_AZUL"
+		"000000000000000011111111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"COR_BRANCO"
+		"111111111111111111111111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"COR_CIANO"
+		"000000001111111111111111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"COR_LARANJA"
+		"111111111010010100000000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"COR_PRETO"
+		"000000000000000000000000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"COR_VERDE"
+		"000000001111111100000000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"COR_VERMELHO"
+		"111111110000000000000000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(drawing
+		(rectangle (rect 16 16 216 160)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 248 -64 348 16))
+)
